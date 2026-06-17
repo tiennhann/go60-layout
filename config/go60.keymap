@@ -128,8 +128,8 @@
               &kp TAB   &kp Q      &kp W    &kp E     &kp R   &kp T                                                       &kp Y     &kp U      &kp I     &kp O     &kp P            &kp BSLH
               &kp ESC   &kp A      &kp S    &kp D     &kp F   &kp G                                                       &kp H     &kp J      &kp K     &kp L  &kp SEMI             &kp SQT
  &magic LAYER_Magic 0   &kp Z      &kp X    &kp C     &kp V   &kp B                                                       &kp N     &kp M  &kp COMMA   &kp DOT  &kp FSLH          &keypad_td
-                               &kp GRAVE  &kp DEL  &kp BSPC                                                                      &kp LGUI   &kp LBKT  &kp RBKT
-                                                     &symbol_nav_td  &kp LSHFT  &kp LCTRL     &kp LALT  &kp SPACE  &mt RALT RET
+                               &kp GRAVE  &kp DEL     &symbol_nav_td                                                                  &kp LGUI   &kp LBKT  &kp RBKT
+                                                        &kp BSPC  &kp LSHFT  &kp LCTRL     &kp LALT  &mt RALT RET  &kp SPACE  
             >;
         };
 

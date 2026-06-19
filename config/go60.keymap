@@ -65,7 +65,6 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;
-            hold-while-undecided;
         };
 
         hml_ring: home_row_mod_left_ring {
@@ -78,7 +77,6 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;
-            hold-while-undecided;
         };
 
         hml_middle: home_row_mod_left_middle {
@@ -91,7 +89,6 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;
-            hold-while-undecided;
         };
 
         hml_index: home_row_mod_left_index {
@@ -104,7 +101,6 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;
-            hold-while-undecided;
         };
 
         hmr_index: home_row_mod_right_index {
@@ -117,7 +113,6 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
-            hold-while-undecided;
         };
 
         hmr_middle: home_row_mod_right_middle {
@@ -130,7 +125,6 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
-            hold-while-undecided;
         };
 
         hmr_ring: home_row_mod_right_ring {
@@ -143,7 +137,6 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
-            hold-while-undecided;
         };
 
         hmr_pinky: home_row_mod_right_pinky {
@@ -156,7 +149,6 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
-            hold-while-undecided;
         };
 
         keypad_td: keypad_td {
@@ -242,7 +234,7 @@
             bindings = <
             &kp EQUAL  &kp N1     &kp N2   &kp N3    &kp N4  &kp N5                                                      &kp N6    &kp N7     &kp N8    &kp N9    &kp N0           &kp MINUS
               &kp TAB   &kp Q      &kp W    &kp E     &kp R   &kp T                                                       &kp Y     &kp U      &kp I     &kp O     &kp P            &kp BSLH
-              &kp ESC   &hml_pinky LCTRL A  &hml_ring LALT S  &hml_middle LGUI D  &hml_index LSHFT F   &kp G                  &kp H  &hmr_index RSHFT J  &hmr_middle RGUI K  &hmr_ring RALT L  &hmr_pinky RCTRL SEMI    &kp SQT
+              &kp ESC   &hml_pinky LCTRL A  &hml_ring LALT S  &hml_middle LGUI D  &hml_index LSHFT F   &kp G                  &kp H  &hmr_index RSHFT J  &hmr_middle RGUI K  &hmr_ring LALT L  &hmr_pinky RCTRL SEMI    &kp SQT
  &magic LAYER_Magic 0   &kp Z      &kp X    &kp C     &kp V   &kp B                                                       &kp N     &kp M  &kp COMMA   &kp DOT  &kp FSLH          &keypad_td
                                &kp GRAVE  &kp DEL     &symbol_nav_td                                                                  &kp LGUI   &kp LBKT  &kp RBKT
                                                         &kp BSPC  &kp LSHFT  &kp LCTRL     &kp LALT  &mt RALT RET  &kp SPACE  

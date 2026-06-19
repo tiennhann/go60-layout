@@ -12,7 +12,7 @@ layers:
     - H
     - {t: J, h: RSHFT}
     - {t: K, h: RGUI}
-    - {t: L, h: RALT}
+    - {t: L, h: LALT}
     - {t: ;, h: RCTRL}
     - ''''
   - [Magic, Z, X, C, V, B, N, M, ',', ., /, Keypad]

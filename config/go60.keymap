@@ -26,6 +26,7 @@
 #define LAYER_Mouse 5
 #define LAYER_MouseSlow 6
 #define LAYER_MouseFast 7
+#define LAYER_Nav 8
 
 // Key positions per hand, used for positional home row mods.
 // Left-hand keys trigger holds only when followed by a right-hand key or thumb,
@@ -252,7 +253,7 @@
               &kp ESC   &hml_pinky LCTRL A  &hml_ring LALT S  &hml_middle LGUI D  &hml_index LSHFT F   &kp G                  &kp H  &hmr_index RSHFT J  &hmr_middle RGUI K  &hmr_ring LALT L  &hmr_pinky RCTRL SEMI    &kp SQT
  &magic LAYER_Magic 0   &kp Z      &kp X    &kp C     &kp V   &kp B                                                       &kp N     &kp M  &kp COMMA   &kp DOT  &kp FSLH          &keypad_td
                                &kp GRAVE  &kp DEL     &symbol_td                                                                  &kp LGUI   &kp LBKT  &kp RBKT
-                                                        &kp BSPC  &kp LSHFT  &kp LCTRL     &kp LALT  &mo LAYER_Symbol  &kp SPACE  
+                                                        &kp BSPC  &mo LAYER_Nav  &kp LCTRL     &kp LALT  &mo LAYER_Symbol  &kp SPACE  
             >;
         };
 
@@ -337,6 +338,20 @@
             &trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
                             &trans  &trans  &trans                                                  &trans  &trans  &trans
                                                     &trans  &trans  &trans      &trans  &trans  &trans
+            >;
+        };
+
+        // Navigation layer (hold the left thumb key that replaced Shift).
+        // Left hand: e=up, s=left, d=down, f=right.  Right hand: vim h/j/k/l.
+        // Brackets: t={  y=}  b=[  n=]   Everything else falls through (&trans).
+        layer_Nav {
+            bindings = <
+            &trans  &trans    &trans     &trans     &trans      &trans                       &trans    &trans    &trans   &trans     &trans  &trans
+            &trans  &trans    &trans     &kp UP     &trans      &kp LBRC                     &kp RBRC  &trans    &trans   &trans     &trans  &trans
+            &trans  &trans    &kp LEFT   &kp DOWN   &kp RIGHT   &trans                       &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &trans  &trans
+            &trans  &trans    &trans     &trans     &trans      &kp LBKT                     &kp RBKT  &trans    &trans   &trans     &trans  &trans
+                              &trans     &trans     &trans                                                      &trans   &trans     &trans
+                                                                &trans  &trans  &trans      &trans  &trans  &trans
             >;
         };
     };

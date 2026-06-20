@@ -231,10 +231,10 @@
     combos {
         compatible = "zmk,combos";
 
-        // Press J + K + L together (within 60ms) to send Enter.
+        // Press K + L together (within 60ms) to send Enter.
         combo_enter {
             timeout-ms = <60>;
-            key-positions = <31 32 33>;
+            key-positions = <32 33>;
             bindings = <&kp RET>;
             layers = <LAYER_Base>;
         };

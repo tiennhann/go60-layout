@@ -17,6 +17,8 @@
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
+#include <mouse-gesture.dtsi>
+
 // layers
 #define LAYER_Base 0
 #define LAYER_Keypad 1
@@ -228,6 +230,18 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        // Press J + K + L together (within 60ms) to send Enter.
+        combo_enter {
+            timeout-ms = <60>;
+            key-positions = <31 32 33>;
+            bindings = <&kp RET>;
+            layers = <LAYER_Base>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
         layer_Base {
@@ -237,7 +251,7 @@
               &kp ESC   &hml_pinky LCTRL A  &hml_ring LALT S  &hml_middle LGUI D  &hml_index LSHFT F   &kp G                  &kp H  &hmr_index RSHFT J  &hmr_middle RGUI K  &hmr_ring LALT L  &hmr_pinky RCTRL SEMI    &kp SQT
  &magic LAYER_Magic 0   &kp Z      &kp X    &kp C     &kp V   &kp B                                                       &kp N     &kp M  &kp COMMA   &kp DOT  &kp FSLH          &keypad_td
                                &kp GRAVE  &kp DEL     &symbol_nav_td                                                                  &kp LGUI   &kp LBKT  &kp RBKT
-                                                        &kp BSPC  &kp LSHFT  &kp LCTRL     &kp LALT  &mt RALT RET  &kp SPACE  
+                                                        &kp BSPC  &kp LSHFT  &kp LCTRL     &mouse_gesture_kp 0 LALT  &mt RALT RET  &kp SPACE  
             >;
         };
 
@@ -287,11 +301,26 @@
     };
 };
 
+// Swipe gestures on the right (cursor) pad, active while the right Alt thumb
+// is held. macOS Spaces / Mission Control shortcuts.
+&zip_mouse_gesture {
+    stroke-size = <300>;
+    movement-threshold = <3>;
+    enable-eager-mode;
+    suppress-movement;
+    gesture-cooldown-ms = <500>;
+
+    mission_control { pattern = <GESTURE_UP>;    bindings = <&kp LC(UP)>; };
+    app_expose      { pattern = <GESTURE_DOWN>;  bindings = <&kp LC(DOWN)>; };
+    space_left      { pattern = <GESTURE_LEFT>;  bindings = <&kp LC(LEFT)>; };
+    space_right     { pattern = <GESTURE_RIGHT>; bindings = <&kp LC(RIGHT)>; };
+};
+
 &cirque_rh_listener {
-    input-processors = <&zip_xy_scaler 3 1>;
+    input-processors = <&zip_xy_scaler 3 1>, <&zip_mouse_gesture>;
     layer_2 {
         layers = <2>;
-        input-processors = <&zip_xy_scaler 9 1>;
+        input-processors = <&zip_xy_scaler 9 1>, <&zip_mouse_gesture>;
     };
 };
 

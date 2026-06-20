@@ -25,7 +25,7 @@ layers:
     - BSPC
     - LSHFT
     - LCTRL
-    - '&mouse_gesture_kp 0 LALT'
+    - LALT
     - {t: RET, h: RALT}
     - SPACE
   Keypad:

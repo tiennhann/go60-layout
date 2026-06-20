@@ -253,7 +253,7 @@
               &kp ESC   &hml_pinky LCTRL A  &hml_ring LALT S  &hml_middle LGUI D  &hml_index LSHFT F   &kp G                  &kp H  &hmr_index RSHFT J  &hmr_middle RGUI K  &hmr_ring LALT L  &hmr_pinky RCTRL SEMI    &kp SQT
  &magic LAYER_Magic 0   &kp Z      &kp X    &kp C     &kp V   &kp B                                                       &kp N     &kp M  &kp COMMA   &kp DOT  &kp FSLH          &keypad_td
                                &kp GRAVE  &kp DEL     &symbol_td                                                                  &kp LGUI   &kp LBKT  &kp RBKT
-                                                        &kp BSPC  &mo LAYER_Nav  &kp LCTRL     &kp LALT  &mo LAYER_Symbol  &kp SPACE  
+                                                        &kp BSPC  &mo LAYER_Symbol  &kp LCTRL     &kp LALT  &mo LAYER_Nav  &kp SPACE  
             >;
         };
 
@@ -341,7 +341,7 @@
             >;
         };
 
-        // Navigation layer (hold the left thumb key that replaced Shift).
+        // Navigation layer (hold the right thumb key).
         // Left hand: e=up, s=left, d=down, f=right.  Right hand: vim h/j/k/l.
         // Brackets: t={  y=}  b=[  n=]   Everything else is disabled (&none) so
         // unassigned keys produce nothing while this layer is held.
@@ -352,7 +352,7 @@
             &none   &none     &kp LEFT   &kp DOWN   &kp RIGHT   &none                        &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &none   &none
             &none   &none     &none      &none      &none       &kp LBKT                     &kp RBKT  &none     &none    &none      &none   &none
                               &none      &none      &none                                                       &none    &none      &none
-                                                                &none   &trans  &none       &none   &none   &none
+                                                                &none   &none  &none       &none   &trans  &none
             >;
         };
     };

@@ -377,7 +377,7 @@
     // The scaler must run BEFORE zip_xy_to_scroll_mapper: the scaler only acts
     // on REL_X/REL_Y, and the scroll mapper converts those into REL_WHEEL events.
     // If the scaler ran after the mapper it would be a no-op (scroll speed fixed).
-    input-processors = <&zip_xy_scaler 4 1>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>, <&zip_temp_layer LAYER_Mouse 1000>;
+    input-processors = <&zip_xy_scaler 4 1>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>, <&zip_temp_layer LAYER_Mouse 800>;
     layer_4 {
         layers = <4>;
         input-processors = <&zip_xy_scaler 3 1>;
@@ -392,9 +392,9 @@
     };
 };
 
-// Cirque sensor ADC attenuation: 1x = most sensitive (default board value),
-// 4x = least. 2x damps raw signal slightly for a steadier, less-jittery feel
-// (applies to both trackpads).
+// Cirque sensor ADC attenuation: 1x = most sensitive (matches the board
+// default), 4x = least. Kept at 1x so light initial touches always register;
+// higher values can drop a soft first touch and require a re-tap.
 &glidepoint {
-    sensitivity = "2x";
+    sensitivity = "1x";
 };

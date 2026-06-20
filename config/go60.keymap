@@ -23,6 +23,9 @@
 #define LAYER_SymbolNav 2
 #define LAYER_Magic 3
 #define LAYER_Factory 4
+#define LAYER_Mouse 5
+#define LAYER_MouseSlow 6
+#define LAYER_MouseFast 7
 
 // Key positions per hand, used for positional home row mods.
 // Left-hand keys trigger holds only when followed by a right-hand key or thumb,
@@ -296,21 +299,74 @@
                                           &kp N7  &kp N8  &kp N9      &kp N9  &kp N8  &kp N7
             >;
         };
+
+        // Mouse layer (auto-activated by touching a trackpad via zip_temp_layer).
+        // Left hand = clicks, sticky mods, undo/cut/copy/paste; thumbs = clicks.
+        layer_Mouse {
+            bindings = <
+            &none              &none      &none      &none                &none                &none                   &none  &none                &none                &none  &none  &none
+            &tog LAYER_Mouse   &none      &none      &mo LAYER_MouseSlow  &mo LAYER_MouseFast  &none                   &none  &none                &none                &none  &none  &none
+            &kp ESC            &sk LCTRL  &sk LALT   &sk LGUI             &sk LSHFT            &mkp MB4                 &none  &mo LAYER_MouseFast  &mo LAYER_MouseSlow  &none  &none  &none
+            &none              &kp LC(Z)  &kp LC(X)  &kp LC(C)            &kp LC(V)            &mkp MB5                 &none  &none                &none                &none  &none  &none
+                                          &none      &none               &none                                                            &none  &none  &none
+                                                                         &mkp LCLK  &mkp RCLK  &none      &none  &none  &none
+            >;
+        };
+
+        // Speed-shift layers: pure pass-through; they only retune the pad
+        // input-processors (see the cirque listeners below).
+        layer_MouseSlow {
+            bindings = <
+            &trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
+            &trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
+            &trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
+            &trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
+                            &trans  &trans  &trans                                                  &trans  &trans  &trans
+                                                    &trans  &trans  &trans      &trans  &trans  &trans
+            >;
+        };
+
+        layer_MouseFast {
+            bindings = <
+            &trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
+            &trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
+            &trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
+            &trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
+                            &trans  &trans  &trans                                                  &trans  &trans  &trans
+                                                    &trans  &trans  &trans      &trans  &trans  &trans
+            >;
+        };
     };
 };
 
 &cirque_rh_listener {
-    input-processors = <&zip_xy_scaler 3 1>;
+    input-processors = <&zip_xy_scaler 3 1>, <&zip_temp_layer LAYER_Mouse 5000>;
     layer_2 {
         layers = <2>;
         input-processors = <&zip_xy_scaler 9 1>;
     };
+    layer_MouseSlow {
+        layers = <LAYER_MouseSlow>;
+        input-processors = <&zip_xy_scaler 2 1>;
+    };
+    layer_MouseFast {
+        layers = <LAYER_MouseFast>;
+        input-processors = <&zip_xy_scaler 8 1>;
+    };
 };
 
 &cirque_lh_listener {
-    input-processors = <&zip_xy_to_scroll_mapper>, <&zip_xy_scaler 2 1>, <&zip_click_to_right_click_mapper>;
+    input-processors = <&zip_xy_to_scroll_mapper>, <&zip_xy_scaler 2 1>, <&zip_click_to_right_click_mapper>, <&zip_temp_layer LAYER_Mouse 5000>;
     layer_4 {
         layers = <4>;
         input-processors = <&zip_xy_scaler 3 1>;
+    };
+    layer_MouseSlow {
+        layers = <LAYER_MouseSlow>;
+        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_xy_scaler 1 1>, <&zip_click_to_right_click_mapper>;
+    };
+    layer_MouseFast {
+        layers = <LAYER_MouseFast>;
+        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_xy_scaler 4 1>, <&zip_click_to_right_click_mapper>;
     };
 };

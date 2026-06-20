@@ -305,8 +305,8 @@
         layer_Mouse {
             bindings = <
             &none              &none      &none      &none                &none                &none                   &none  &none                &none                &none  &none  &none
-            &tog LAYER_Mouse   &none      &none      &mo LAYER_MouseSlow  &mo LAYER_MouseFast  &none                   &none  &none                &none                &none  &none  &none
-            &kp ESC            &sk LCTRL  &sk LALT   &sk LGUI             &sk LSHFT            &mkp MB4                 &none  &mo LAYER_MouseFast  &mo LAYER_MouseSlow  &none  &none  &none
+            &tog LAYER_Mouse   &none      &none      &mo LAYER_MouseSlow  &mo LAYER_MouseFast  &none                   &none  &mo LAYER_MouseSlow  &mo LAYER_MouseFast  &none  &none  &none
+            &kp ESC            &sk LCTRL  &sk LALT   &sk LGUI             &sk LSHFT            &mkp MB4                 &none  &none                &none                &none  &none  &none
             &none              &kp LC(Z)  &kp LC(X)  &kp LC(C)            &kp LC(V)            &mkp MB5                 &none  &none                &none                &none  &none  &none
                                           &none      &none               &none                                                            &none  &none  &none
                                                                          &mkp LCLK  &mkp RCLK  &none      &none  &none  &none
@@ -340,7 +340,7 @@
 };
 
 &cirque_rh_listener {
-    input-processors = <&zip_xy_scaler 3 1>, <&zip_temp_layer LAYER_Mouse 1500>;
+    input-processors = <&zip_xy_scaler 3 1>, <&zip_temp_layer LAYER_Mouse 800>;
     layer_2 {
         layers = <2>;
         input-processors = <&zip_xy_scaler 9 1>;
@@ -356,17 +356,27 @@
 };
 
 &cirque_lh_listener {
-    input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_xy_scaler 2 1>, <&zip_click_to_right_click_mapper>, <&zip_temp_layer LAYER_Mouse 1000>;
+    // The scaler must run BEFORE zip_xy_to_scroll_mapper: the scaler only acts
+    // on REL_X/REL_Y, and the scroll mapper converts those into REL_WHEEL events.
+    // If the scaler ran after the mapper it would be a no-op (scroll speed fixed).
+    input-processors = <&zip_xy_scaler 2 1>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>, <&zip_temp_layer LAYER_Mouse 1000>;
     layer_4 {
         layers = <4>;
         input-processors = <&zip_xy_scaler 3 1>;
     };
     layer_MouseSlow {
         layers = <LAYER_MouseSlow>;
-        input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_xy_scaler 1 1>, <&zip_click_to_right_click_mapper>;
+        input-processors = <&zip_xy_scaler 1 1>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>;
     };
     layer_MouseFast {
         layers = <LAYER_MouseFast>;
-        input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_xy_scaler 4 1>, <&zip_click_to_right_click_mapper>;
+        input-processors = <&zip_xy_scaler 4 1>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>;
     };
+};
+
+// Cirque sensor ADC attenuation: 1x = most sensitive (default board value),
+// 4x = least. 2x damps raw signal slightly for a steadier, less-jittery feel
+// (applies to both trackpads).
+&glidepoint {
+    sensitivity = "2x";
 };

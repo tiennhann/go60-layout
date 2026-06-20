@@ -16,18 +16,7 @@ layers:
     - {t: ;, h: RCTRL}
     - ''''
   - [Magic, Z, X, C, V, B, N, M, ',', ., /, Keypad]
-  - - '`'
-    - DEL
-    - Sym/Nav
-    - LGUI
-    - '['
-    - ']'
-    - BSPC
-    - LSHFT
-    - LCTRL
-    - LALT
-    - {t: RET, h: RALT}
-    - SPACE
+  - ['`', DEL, '&symbol_td', LGUI, '[', ']', BSPC, LSHFT, LCTRL, LALT, Symbol, SPACE]
   Keypad:
   - ['', F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11]
   - - {t: ▽, type: trans}
@@ -72,29 +61,29 @@ layers:
     - KP 0
     - KP DOT
     - BSPC
-    - SymbolNav
+    - Symbol
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - KP 0
-  SymbolNav:
-  - [INS, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11]
-  - [SLCK, '!', HOME, UP, END, PG UP, (, ), UP, '%', APP, F12]
-  - [CAPS, '@', LEFT, DOWN, RIGHT, PG DN, $, LEFT, DOWN, RIGHT, PAUSE BREAK, PSCRN]
-  - [Magic, '#', '[', ']', '{', '}', '&', '*', _, +, LSHFT, LCTRL]
-  - - ^
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - Ctl+Sft+TAB
-    - Ctl+TAB
-    - {t: Base, h: toggle, type: held}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+  Symbol:
+  - ['', F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, '']
+  - ['=', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-']
+  - [+, '!', '@', '#', $, '%', ^, '&', '*', (, ), _]
+  - ['', '', '', '', '', '', '[', ']', '{', '}', '', '']
+  - - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: Base, h: toggle}
+    - ''
+    - ''
+    - ''
+    - {type: held}
+    - ''
   Magic:
   - [BT CLR, BRI DN, BRI UP, PREV, NEXT, PP, MUTE, VOL DN, VOL UP, '', '', BT CLR ALL]
   - [Bootloader, RGB SPI, RGB SAI, RGB HUI, RGB BRI, RGB TOG, '', '', '', '', '', Bootloader]

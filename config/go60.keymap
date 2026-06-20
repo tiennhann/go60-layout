@@ -343,15 +343,16 @@
 
         // Navigation layer (hold the left thumb key that replaced Shift).
         // Left hand: e=up, s=left, d=down, f=right.  Right hand: vim h/j/k/l.
-        // Brackets: t={  y=}  b=[  n=]   Everything else falls through (&trans).
+        // Brackets: t={  y=}  b=[  n=]   Everything else is disabled (&none) so
+        // unassigned keys produce nothing while this layer is held.
         layer_Nav {
             bindings = <
-            &trans  &trans    &trans     &trans     &trans      &trans                       &trans    &trans    &trans   &trans     &trans  &trans
-            &trans  &trans    &trans     &kp UP     &trans      &kp LBRC                     &kp RBRC  &trans    &trans   &trans     &trans  &trans
-            &trans  &trans    &kp LEFT   &kp DOWN   &kp RIGHT   &trans                       &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &trans  &trans
-            &trans  &trans    &trans     &trans     &trans      &kp LBKT                     &kp RBKT  &trans    &trans   &trans     &trans  &trans
-                              &trans     &trans     &trans                                                      &trans   &trans     &trans
-                                                                &trans  &trans  &trans      &trans  &trans  &trans
+            &none   &none     &none      &none      &none       &none                        &none     &none     &none    &none      &none   &none
+            &none   &none     &none      &kp UP     &none       &kp LBRC                     &kp RBRC  &none     &none    &none      &none   &none
+            &none   &none     &kp LEFT   &kp DOWN   &kp RIGHT   &none                        &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &none   &none
+            &none   &none     &none      &none      &none       &kp LBKT                     &kp RBKT  &none     &none    &none      &none   &none
+                              &none      &none      &none                                                       &none    &none      &none
+                                                                &none   &trans  &none       &none   &none   &none
             >;
         };
     };

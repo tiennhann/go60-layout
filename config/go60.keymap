@@ -16,6 +16,7 @@
 
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <mouse-gesture.dtsi>
 
 // layers
 #define LAYER_Base 0
@@ -313,7 +314,7 @@
             &kp ESC            &sk LCTRL  &sk LALT   &sk LGUI             &sk LSHFT            &mkp MB4                 &none  &none                &none                &none  &none  &none
             &none              &kp LC(Z)  &kp LC(X)  &kp LC(C)            &kp LC(V)            &mkp MB5                 &none  &none                &none                &none  &none  &none
                                           &none      &none               &none                                                            &none  &none  &none
-                                                                         &mkp LCLK  &mkp RCLK  &none      &none  &none  &none
+                                                                         &mkp LCLK  &mkp RCLK  &mouse_gesture      &none  &none  &none
             >;
         };
 
@@ -359,7 +360,10 @@
 };
 
 &cirque_rh_listener {
-    input-processors = <&zip_xy_scaler 3 1>, <&zip_temp_layer LAYER_Mouse 800>;
+    // zip_mouse_gesture runs last so zip_temp_layer still sees movement and keeps
+    // the Mouse layer alive while you gesture. Gesture recognition only kicks in
+    // while &mouse_gesture (left thumb) is held; otherwise the pad is a normal cursor.
+    input-processors = <&zip_xy_scaler 3 1>, <&zip_temp_layer LAYER_Mouse 800>, <&zip_mouse_gesture>;
     layer_2 {
         layers = <2>;
         input-processors = <&zip_xy_scaler 9 1>;
@@ -398,4 +402,34 @@
 // higher values can drop a soft first touch and require a re-tap.
 &glidepoint {
     sensitivity = "1x";
+};
+
+// macOS Mission Control gestures on the right pad. Hold the left-thumb
+// &mouse_gesture key (Mouse layer) and swipe a direction:
+//   left  = previous desktop   (Ctrl+Left)
+//   right = next desktop        (Ctrl+Right)
+//   up    = Mission Control     (Ctrl+Up)
+//   down  = App Expose          (Ctrl+Down)
+// suppress-movement stops the cursor from jumping while a gesture is drawn;
+// eager mode fires the action as soon as a single stroke is recognised.
+&zip_mouse_gesture {
+    enable-eager-mode;
+    suppress-movement;
+
+    gesture_prev_desktop {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&kp LC(LEFT)>;
+    };
+    gesture_next_desktop {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp LC(RIGHT)>;
+    };
+    gesture_mission_control {
+        pattern = <GESTURE_UP>;
+        bindings = <&kp LC(UP)>;
+    };
+    gesture_app_expose {
+        pattern = <GESTURE_DOWN>;
+        bindings = <&kp LC(DOWN)>;
+    };
 };

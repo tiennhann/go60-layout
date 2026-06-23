@@ -305,10 +305,13 @@
         };
 
         // Mouse layer (auto-activated by touching a trackpad via zip_temp_layer).
-        // Left hand = clicks, sticky mods, undo/cut/copy/paste; thumbs = clicks.
+        // Top-left row = macOS Mission Control nav, vim order h/j/k/l:
+        // 1=Left(prev space), 2=Down(App Expose), 3=Up(Mission Control), 4=Right(next space).
+        // Left hand = clicks, sticky mods,
+        // undo/cut/copy/paste; thumbs = clicks.
         layer_Mouse {
             bindings = <
-            &none              &none      &none      &none                &none                &none                   &none  &none                &none                &none  &none  &none
+            &kp LC(LEFT)       &kp LC(DOWN) &kp LC(UP) &kp LC(RIGHT)       &none                &none                   &none  &none                &none                &none  &none  &none
             &tog LAYER_Mouse   &none      &none      &mo LAYER_MouseSlow  &mo LAYER_MouseFast  &none                   &none  &mo LAYER_MouseSlow  &mo LAYER_MouseFast  &none  &none  &none
             &kp ESC            &sk LCTRL  &sk LALT   &sk LGUI             &sk LSHFT            &mkp MB4                 &none  &none                &none                &none  &none  &none
             &none              &kp LC(Z)  &kp LC(X)  &kp LC(C)            &kp LC(V)            &mkp MB5                 &none  &none                &none                &none  &none  &none

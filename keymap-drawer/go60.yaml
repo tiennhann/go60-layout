@@ -126,14 +126,14 @@ layers:
     - {t: LALT, h: sticky}
     - {t: LGUI, h: sticky}
     - {t: LSHFT, h: sticky}
-    - '&mkp MB4'
+    - '&mkp MB5'
     - ''
     - ''
     - ''
     - ''
     - ''
     - ''
-  - ['', Ctl+Z, Ctl+X, Ctl+C, Ctl+V, '&mkp MB5', '', '', '', '', '', '']
+  - ['', Ctl+Z, Ctl+X, Ctl+C, Ctl+V, '&mkp MB4', '', '', '', '', '', '']
   - ['', '', '', '', '', '', '&mkp LCLK', '&mkp RCLK', '', '', '', '']
   MouseSlow:
   - - {t: ▽, type: trans}

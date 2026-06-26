@@ -245,7 +245,7 @@
               &kp ESC   &hml_pinky LCTRL A  &hml_ring LALT S  &hml_middle LGUI D  &hml_index LSHFT F   &kp G                  &kp H  &hmr_index RSHFT J  &hmr_middle RGUI K  &hmr_ring LALT L  &hmr_pinky RCTRL SEMI    &kp SQT
  &magic LAYER_Magic 0   &kp Z      &kp X    &kp C     &kp V   &kp B                                                       &kp N     &kp M  &kp COMMA   &kp DOT  &kp FSLH          &keypad_td
                                &kp GRAVE  &kp DEL     &symbol_td                                                                  &kp LGUI   &kp LBKT  &kp RBKT
-                                                        &kp BSPC  &mo LAYER_Symbol  &kp LCTRL     &kp LALT  &mo LAYER_Nav  &kp SPACE  
+                                                        &kp BSPC  &mo LAYER_Nav  &kp LCTRL     &kp LALT  &mo LAYER_Symbol  &kp SPACE  
             >;
         };
 

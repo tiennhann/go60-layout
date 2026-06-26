@@ -16,7 +16,7 @@ layers:
     - {t: ;, h: RCTRL}
     - ''''
   - [Magic, Z, X, C, V, B, N, M, ',', ., /, Keypad]
-  - ['`', DEL, '&symbol_td', LGUI, '[', ']', BSPC, Symbol, LCTRL, LALT, Nav, SPACE]
+  - ['`', DEL, '&symbol_td', LGUI, '[', ']', BSPC, Nav, LCTRL, LALT, Symbol, SPACE]
   Keypad:
   - ['', F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11]
   - - {t: ▽, type: trans}
@@ -79,10 +79,10 @@ layers:
     - ''
     - ''
     - {t: Base, h: toggle}
+    - ''
+    - ''
+    - ''
     - {type: held}
-    - ''
-    - ''
-    - ''
     - ''
   Magic:
   - [BT CLR, BRI DN, BRI UP, PREV, NEXT, PP, MUTE, VOL DN, VOL UP, '', '', BT CLR ALL]
@@ -269,10 +269,10 @@ layers:
     - ''
     - ''
     - ''
-    - ''
-    - ''
-    - ''
     - {type: held}
+    - ''
+    - ''
+    - {t: ▽, type: trans}
     - ''
 combos:
 - p: [32, 33]

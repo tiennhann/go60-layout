@@ -17,11 +17,6 @@
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
-// Mouse gesture module (kot149/zmk-mouse-gesture). Provides the
-// &zip_mouse_gesture input processor, the &mouse_gesture activation behavior,
-// and the GESTURE_UP/DOWN/LEFT/RIGHT direction macros.
-#include <mouse-gesture.dtsi>
-
 // layers
 #define LAYER_Base 0
 #define LAYER_Keypad 1
@@ -305,12 +300,10 @@
         // Top-left row = macOS Mission Control nav, vim order h/j/k/l:
         // 1=Left(prev space), 2=Down(App Expose), 3=Up(Mission Control), 4=Right(next space).
         // Left hand = clicks, sticky mods, undo/cut/copy/paste; thumbs = clicks.
-        // &mouse_gesture (left inner, row 2): HOLD it and swipe the RIGHT pad to
-        // fire the same four Mission Control actions as a gesture.
         layer_Mouse {
             bindings = <
             &kp LC(LEFT)       &kp LC(DOWN) &kp LC(UP) &kp LC(RIGHT)       &none                &none                   &none  &none                &none                &none  &none  &none
-            &tog LAYER_Mouse   &none      &none      &mo LAYER_MouseSlow  &mo LAYER_MouseFast  &mouse_gesture          &none  &mo LAYER_MouseSlow  &mo LAYER_MouseFast  &none  &none  &none
+            &tog LAYER_Mouse   &none      &none      &mo LAYER_MouseSlow  &mo LAYER_MouseFast  &none                   &none  &mo LAYER_MouseSlow  &mo LAYER_MouseFast  &none  &none  &none
             &kp ESC            &sk LCTRL  &sk LALT   &sk LGUI             &sk LSHFT            &mkp MB5                 &none  &none                &none                &none  &none  &none
             &none              &kp LC(Z)  &kp LC(X)  &kp LC(C)            &kp LC(V)            &mkp MB4                 &none  &none                &none                &none  &none  &none
                                           &none      &none               &none                                                            &none  &none  &none
@@ -359,50 +352,19 @@
     };
 };
 
-// macOS Mission Control swipe gestures on the RIGHT pad. Recognition only runs
-// while the &mouse_gesture key (Mouse layer, left hand) is held; otherwise the
-// pad is a normal cursor. suppress-movement keeps the cursor still mid-swipe.
-&zip_mouse_gesture {
-    stroke-size = <300>;
-    movement-threshold = <3>;
-    enable-eager-mode;
-    suppress-movement;
-    gesture-cooldown-ms = <500>;
-
-    mission_control {
-        pattern = <GESTURE_UP>;
-        bindings = <&kp LC(UP)>;
-    };
-
-    app_expose {
-        pattern = <GESTURE_DOWN>;
-        bindings = <&kp LC(DOWN)>;
-    };
-
-    desktop_left {
-        pattern = <GESTURE_LEFT>;
-        bindings = <&kp LC(LEFT)>;
-    };
-
-    desktop_right {
-        pattern = <GESTURE_RIGHT>;
-        bindings = <&kp LC(RIGHT)>;
-    };
-};
-
 &cirque_rh_listener {
-    input-processors = <&zip_xy_scaler 3 1>, <&zip_mouse_gesture>, <&zip_temp_layer LAYER_Mouse 800>;
+    input-processors = <&zip_xy_scaler 3 1>, <&zip_temp_layer LAYER_Mouse 800>;
     layer_2 {
         layers = <2>;
         input-processors = <&zip_xy_scaler 9 1>;
     };
     layer_MouseSlow {
         layers = <LAYER_MouseSlow>;
-        input-processors = <&zip_xy_scaler 2 1>, <&zip_mouse_gesture>;
+        input-processors = <&zip_xy_scaler 2 1>;
     };
     layer_MouseFast {
         layers = <LAYER_MouseFast>;
-        input-processors = <&zip_xy_scaler 8 1>, <&zip_mouse_gesture>;
+        input-processors = <&zip_xy_scaler 8 1>;
     };
 };
 

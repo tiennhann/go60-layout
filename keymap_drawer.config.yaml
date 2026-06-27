@@ -1,41 +1,26 @@
 draw_config:
-  # Highlight every key that switches/activates a layer in amber so the
-  # layer "entry points" are easy to spot on the rendered keymap.
+  # Recolor the auto-detected "held" activator key from the default red (#fdd)
+  # to amber so each layer shows its activating thumb key in amber.
   svg_extra_style: |
-    rect.layeract {
+    rect.held, rect.combo.held {
         fill: #ffd166;
     }
 
 parse_config:
+  # NOTE: keys listed in raw_binding_map are NOT auto-detected as layer
+  # activators, so they would lose the red "held" highlight on the target
+  # layer. We therefore leave the momentary thumb activators
+  # (&mo LAYER_Symbol / &mo LAYER_Nav) OUT of this map so keymap-drawer marks
+  # them red (rect.held) on the Symbol/Nav layers and links their legends.
   raw_binding_map:
-    # --- Layer activation keys (colored via type: layeract) ---
-    "&magic LAYER_Magic 0":
-      t: Magic
-      type: layeract
-    "&keypad_td":
-      t: Keypad
-      type: layeract
-    "&symbol_td":
-      t: Symbol
-      type: layeract
-    "&mo LAYER_Symbol":
-      t: Symbol
-      type: layeract
-    "&mo LAYER_Nav":
-      t: Nav
-      type: layeract
-    "&tog LAYER_Mouse":
-      t: Mouse Toggle
-      type: layeract
-    "&mo LAYER_MouseSlow":
-      t: Slower
-      type: layeract
-    "&mo LAYER_MouseFast":
-      t: Faster
-      type: layeract
-    "&to LAYER_Base":
-      t: Base
-      type: layeract
+    # --- Custom behaviors that the parser can't trace; label them manually ---
+    "&magic LAYER_Magic 0": Magic
+    "&keypad_td": Keypad
+    "&symbol_td": Symbol
+    "&to LAYER_Base": Base
+    "&tog LAYER_Mouse": Mouse Toggle
+    "&mo LAYER_MouseSlow": Slower
+    "&mo LAYER_MouseFast": Faster
     # --- Magic / firmware ---
     "&bt_0": BT 0
     "&bt_1": BT 1

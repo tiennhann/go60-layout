@@ -15,8 +15,30 @@ layers:
     - {t: L, h: LALT}
     - {t: ;, h: RCTRL}
     - ''''
-  - [Magic, Z, X, C, V, B, N, M, ',', ., /, Keypad]
-  - ['`', DEL, Symbol, LGUI, '[', ']', BSPC, Symbol, LCTRL, LALT, Nav, SPACE]
+  - - {t: Magic, type: layeract}
+    - Z
+    - X
+    - C
+    - V
+    - B
+    - N
+    - M
+    - ','
+    - .
+    - /
+    - {t: Keypad, type: layeract}
+  - - '`'
+    - DEL
+    - {t: Symbol, type: layeract}
+    - LGUI
+    - '['
+    - ']'
+    - BSPC
+    - {t: Symbol, type: layeract}
+    - LCTRL
+    - LALT
+    - {t: Nav, type: layeract}
+    - SPACE
   Symbol:
   - ['', F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, '']
   - [+, '!', '@', '#', $, '%', ^, '&', '*', (, ), _]
@@ -28,7 +50,7 @@ layers:
     - ''
     - ''
     - ''
-    - {t: Base, h: toggle}
+    - {t: Base, type: layeract}
     - ''
     - ''
     - ''
@@ -53,7 +75,18 @@ layers:
     - ''
   Mouse:
   - [Prev Space, App Expose, Mission Control, Next Space, '', '', '', '', '', '', '', '']
-  - [Mouse Toggle, '', '', Slower, Faster, '', '', Slower, Faster, '', '', '']
+  - - {t: Mouse Toggle, type: layeract}
+    - ''
+    - ''
+    - {t: Slower, type: layeract}
+    - {t: Faster, type: layeract}
+    - ''
+    - ''
+    - {t: Slower, type: layeract}
+    - {t: Faster, type: layeract}
+    - ''
+    - ''
+    - ''
   - [ESC, Sticky Ctrl, Sticky Alt, Sticky Cmd, Sticky Shift, Forward Button, '', '', '', '', '', '']
   - ['', Undo, Cut, Copy, Paste, Back Button, '', '', '', '', '', '']
   - ['', '', '', '', '', '', Left Click, Right Click, '', '', '', '']
@@ -89,7 +122,7 @@ layers:
     - KP PLUS
     - KP MULTIPLY
     - KP NUM
-  - - Magic
+  - - {t: Magic, type: layeract}
     - Ctl+Z
     - Ctl+X
     - Ctl+C
@@ -100,14 +133,14 @@ layers:
     - KP 3
     - KP ENTER
     - '='
-    - {t: Base, h: toggle}
+    - {t: Base, type: layeract}
   - - ''
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - KP 0
     - KP DOT
     - BSPC
-    - Symbol
+    - {t: Symbol, type: layeract}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}

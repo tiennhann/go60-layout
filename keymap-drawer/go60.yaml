@@ -36,15 +36,15 @@ layers:
     - ''
   Nav:
   - ['', '', '', '', '', '', '', '', '', '', '', '']
-  - ['', '', '', UP, '', '{', '}', '', '', '', '', '']
-  - ['', '', LEFT, DOWN, RIGHT, '', LEFT, DOWN, UP, RIGHT, '', '']
-  - ['', '', '', '', '', '[', ']', '', '', '', '', '']
+  - ['', Prev Tab, Next Tab, '', Browser Back, Browser Fwd, PG UP, HOME, UP, END, Search Selected, '']
+  - ['', '', '', '', '', '', PG DN, LEFT, DOWN, RIGHT, Copy Area Screenshot, '']
+  - ['', '', '', '', '', '', '', Select Word Back, Select Word, Select Line, Copy Screenshot, '']
   - - ''
     - ''
     - ''
-    - ''
-    - ''
-    - ''
+    - Find
+    - Find Prev
+    - Find Next
     - ''
     - ''
     - ''

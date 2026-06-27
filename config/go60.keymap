@@ -233,6 +233,26 @@
             tap-ms = <5>;
             bindings = <&kp LG(C)>, <&kp LG(T)>, <&kp LG(V)>, <&kp RET>;
         };
+
+        // Select whole word forward (macOS), mirroring zwang695's sequence:
+        // jump to end of word, back to its start, then select forward a word.
+        select_word: select_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&kp LA(RIGHT)>, <&kp LA(LEFT)>, <&kp LA(LS(RIGHT))>;
+        };
+
+        // Select whole word backward: jump to start of word, to its end,
+        // then select backward a word.
+        select_word_back: select_word_back {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&kp LA(LEFT)>, <&kp LA(RIGHT)>, <&kp LA(LS(LEFT))>;
+        };
     };
 
     combos {
@@ -304,7 +324,7 @@
             &none   &none           &none        &none   &none          &none                         &none      &none            &none             &none         &none               &none
             &none   &kp LC(LS(TAB)) &kp LC(TAB)  &none   &kp LG(LBKT)   &kp LG(RBKT)                  &kp PG_UP  &kp HOME         &kp UP            &kp END       &search_selected    &none
             &none   &none           &none        &none   &none          &none                         &kp PG_DN  &kp LEFT         &kp DOWN          &kp RIGHT     &kp LC(LG(LS(N4)))  &none
-            &none   &none           &none        &none   &none          &none                         &none      &kp LA(LS(LEFT)) &kp LA(LS(RIGHT)) &select_line  &kp LC(LG(LS(N3)))  &none
+            &none   &none           &none        &none   &none          &none                         &none      &select_word_back &select_word &select_line  &kp LC(LG(LS(N3)))  &none
                                     &none        &none   &none                                                                    &kp LG(F)         &kp LG(LS(G)) &kp LG(G)
                                                                         &none   &none  &none       &none   &trans  &none
             >;

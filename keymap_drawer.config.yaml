@@ -1,22 +1,33 @@
 draw_config:
-  # Recolor the auto-detected "held" activator key from the default red (#fdd)
-  # to amber so each layer shows its activating thumb key in amber.
   svg_extra_style: |
+    /* Target layer: the auto-detected "held" activator key gets an amber fill
+       (overrides keymap-drawer's default red #fdd). This shows, on each layer,
+       which key you hold to keep that layer active. */
     rect.held, rect.combo.held {
         fill: #ffd166;
     }
+    /* Base layer: legends of keys that activate a layer (Symbol/Nav/...) are
+       drawn in bold amber so the entry points stand out on the Base map too.
+       (A full key fill here isn't possible together with the held highlight.) */
+    .layer-activator {
+        fill: #c8860a;
+        font-weight: bold;
+    }
 
 parse_config:
+  # Mark ALL key sequences that reach a layer as "held" (amber), not just the
+  # first. Symbol is reachable from two keys (left thumb + lower-row key), so
+  # this ensures both — including the thumb — get highlighted.
+  mark_alternate_layer_activators: true
   # NOTE: keys listed in raw_binding_map are NOT auto-detected as layer
-  # activators, so they would lose the red "held" highlight on the target
-  # layer. We therefore leave the momentary thumb activators
-  # (&mo LAYER_Symbol / &mo LAYER_Nav) OUT of this map so keymap-drawer marks
-  # them red (rect.held) on the Symbol/Nav layers and links their legends.
+  # activators, so they would lose the "held" highlight on the target layer.
+  # We therefore leave the momentary activators (&mo LAYER_Symbol /
+  # &mo LAYER_Nav) OUT of this map so keymap-drawer marks them amber on the
+  # Symbol/Nav layers and links their legends.
   raw_binding_map:
     # --- Custom behaviors that the parser can't trace; label them manually ---
     "&magic LAYER_Magic 0": Magic
     "&keypad_td": Keypad
-    "&symbol_td": Symbol
     "&to LAYER_Base": Base
     "&tog LAYER_Mouse": Mouse Toggle
     "&mo LAYER_MouseSlow": Slower
@@ -39,10 +50,6 @@ parse_config:
     "&mkp RCLK": Right Click
     "&mkp MB4": Back Button
     "&mkp MB5": Forward Button
-    "&sk LCTRL": Sticky Ctrl
-    "&sk LALT": Sticky Alt
-    "&sk LGUI": Sticky Cmd
-    "&sk LSHFT": Sticky Shift
     # Mouse layer top row: macOS Mission Control navigation
     "&kp LC(UP)": Mission Control
     "&kp LC(DOWN)": App Expose

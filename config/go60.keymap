@@ -221,6 +221,25 @@
                 = <&out OUT_BLE>,
                   <&bt BT_SEL 3>;
         };
+
+        // macOS "select whole line": jump to line start, then select to line end.
+        select_line: select_line {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&kp LG(LEFT)>, <&kp LG(LS(RIGHT))>;
+        };
+
+        // "Search selected text": copy selection, open a new browser tab,
+        // paste, and hit Enter to run the search.
+        search_selected: search_selected {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <50>;
+            tap-ms = <5>;
+            bindings = <&kp LG(C)>, <&kp LG(T)>, <&kp LG(V)>, <&kp RET>;
+        };
     };
 
     combos {
@@ -278,18 +297,23 @@
             >;
         };
 
-        // Navigation layer (hold the right thumb key).
-        // Left hand: e=up, s=left, d=down, f=right.  Right hand: vim h/j/k/l.
-        // Brackets: t={  y=}  b=[  n=]   Everything else is disabled (&none) so
-        // unassigned keys produce nothing while this layer is held.
+        // Navigation layer (hold the right thumb key). All shortcuts are macOS.
+        //   Tabs:    q=prev tab   w=next tab
+        //   Browser: r=back       t=forward
+        //   Arrows:  i=up j=left k=down l=right    (vim-ish on the right hand)
+        //   Paging:  y=page up    h=page down      u=home   o=end
+        //   Select:  m=word back  ,=word fwd       .=whole line
+        //   Search:  p=search selected text        find/prev/next under m , .
+        //   Screens: ;=copy area screenshot        /=copy full screenshot
+        // Everything else is &none so unassigned keys do nothing while held.
         layer_Nav {
             bindings = <
-            &none   &none     &none      &none      &none       &none                        &none     &none     &none    &none      &none   &none
-            &none   &none     &none      &kp UP     &none       &kp LBRC                     &kp RBRC  &none     &none    &none      &none   &none
-            &none   &none     &kp LEFT   &kp DOWN   &kp RIGHT   &none                        &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &none   &none
-            &none   &none     &none      &none      &none       &kp LBKT                     &kp RBKT  &none     &none    &none      &none   &none
-                              &none      &none      &none                                                       &none    &none      &none
-                                                                &none   &none  &none       &none   &trans  &none
+            &none   &none           &none        &none   &none          &none                         &none      &none            &none             &none         &none               &none
+            &none   &kp LC(LS(TAB)) &kp LC(TAB)  &none   &kp LG(LBKT)   &kp LG(RBKT)                  &kp PG_UP  &kp HOME         &kp UP            &kp END       &search_selected    &none
+            &none   &none           &none        &none   &none          &none                         &kp PG_DN  &kp LEFT         &kp DOWN          &kp RIGHT     &kp LC(LG(LS(N4)))  &none
+            &none   &none           &none        &none   &none          &none                         &none      &kp LA(LS(LEFT)) &kp LA(LS(RIGHT)) &select_line  &kp LC(LG(LS(N3)))  &none
+                                    &none        &none   &none                                                                    &kp LG(F)         &kp LG(LS(G)) &kp LG(G)
+                                                                        &none   &none  &none       &none   &trans  &none
             >;
         };
 

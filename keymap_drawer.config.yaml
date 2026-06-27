@@ -35,3 +35,17 @@ parse_config:
     # Thumb layer activations
     "&mo LAYER_Symbol": Symbol
     "&mo LAYER_Nav": Nav
+    # Navigation layer (macOS)
+    "&kp LC(LS(TAB))": Prev Tab
+    "&kp LC(TAB)": Next Tab
+    "&kp LG(LBKT)": Browser Back
+    "&kp LG(RBKT)": Browser Fwd
+    "&kp LA(LS(LEFT))": Select Word Back
+    "&kp LA(LS(RIGHT))": Select Word
+    "&select_line": Select Line
+    "&search_selected": Search Selected
+    "&kp LC(LG(LS(N4)))": Copy Area Screenshot
+    "&kp LC(LG(LS(N3)))": Copy Screenshot
+    "&kp LG(F)": Find
+    "&kp LG(LS(G))": Find Prev
+    "&kp LG(G)": Find Next

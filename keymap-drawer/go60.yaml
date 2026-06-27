@@ -16,7 +16,7 @@ layers:
     - {t: ;, h: RCTRL}
     - ''''
   - [Magic, Z, X, C, V, B, N, M, ',', ., /, Keypad]
-  - ['`', DEL, '&symbol_td', LGUI, '[', ']', BSPC, Symbol, LCTRL, LALT, Nav, SPACE]
+  - ['`', DEL, Symbol, LGUI, '[', ']', BSPC, Symbol, LCTRL, LALT, Nav, SPACE]
   Symbol:
   - ['', F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, '']
   - [+, '!', '@', '#', $, '%', ^, '&', '*', (, ), _]
@@ -29,7 +29,7 @@ layers:
     - ''
     - ''
     - {t: Base, h: toggle}
-    - {type: held}
+    - ''
     - ''
     - ''
     - ''
@@ -49,36 +49,14 @@ layers:
     - ''
     - ''
     - ''
-    - {type: held}
+    - {t: ▽, type: trans}
     - ''
   Mouse:
-  - [Ctl+LEFT, Ctl+DOWN, Ctl+UP, Ctl+RIGHT, '', '', '', '', '', '', '', '']
-  - - {t: Mouse, h: toggle}
-    - ''
-    - ''
-    - MouseSlow
-    - MouseFast
-    - ''
-    - ''
-    - MouseSlow
-    - MouseFast
-    - ''
-    - ''
-    - ''
-  - - ESC
-    - {t: LCTRL, h: sticky}
-    - {t: LALT, h: sticky}
-    - {t: LGUI, h: sticky}
-    - {t: LSHFT, h: sticky}
-    - '&mkp MB5'
-    - ''
-    - ''
-    - ''
-    - ''
-    - ''
-    - ''
-  - ['', Gui+Z, Gui+X, Gui+C, Gui+V, '&mkp MB4', '', '', '', '', '', '']
-  - ['', '', '', '', '', '', '&mkp LCLK', '&mkp RCLK', '', '', '', '']
+  - [Prev Space, App Expose, Mission Control, Next Space, '', '', '', '', '', '', '', '']
+  - [Mouse Toggle, '', '', Slower, Faster, '', '', Slower, Faster, '', '', '']
+  - [ESC, Sticky Ctrl, Sticky Alt, Sticky Cmd, Sticky Shift, Forward Button, '', '', '', '', '', '']
+  - ['', Undo, Cut, Copy, Paste, Back Button, '', '', '', '', '', '']
+  - ['', '', '', '', '', '', Left Click, Right Click, '', '', '', '']
   Magic:
   - [BT CLR, BRI DN, BRI UP, PREV, NEXT, PP, MUTE, VOL DN, VOL UP, '', '', BT CLR ALL]
   - [Bootloader, RGB SPI, RGB SAI, RGB HUI, RGB BRI, RGB TOG, '', '', '', '', '', Bootloader]
@@ -151,7 +129,7 @@ layers:
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {type: held}
+    - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -213,7 +191,7 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {type: held}
+    - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}

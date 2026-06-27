@@ -2,7 +2,7 @@ parse_config:
   raw_binding_map:
     "&magic LAYER_Magic 0": Magic
     "&keypad_td": Keypad
-    "&symbol_nav_td": Sym/Nav
+    "&symbol_td": Symbol
     "&bt_0": BT 0
     "&bt_1": BT 1
     "&bt_2": BT 2
@@ -10,3 +10,28 @@ parse_config:
     "&out OUT_USB": USB Out
     "&bootloader": Bootloader
     "&sys_reset": Reset
+    # Clipboard (macOS Cmd) on the Mouse layer
+    "&kp LG(Z)": Undo
+    "&kp LG(X)": Cut
+    "&kp LG(C)": Copy
+    "&kp LG(V)": Paste
+    # Mouse layer: clicks, side buttons, speed, sticky mods, layer toggle
+    "&mkp LCLK": Left Click
+    "&mkp RCLK": Right Click
+    "&mkp MB4": Back Button
+    "&mkp MB5": Forward Button
+    "&tog LAYER_Mouse": Mouse Toggle
+    "&mo LAYER_MouseSlow": Slower
+    "&mo LAYER_MouseFast": Faster
+    "&sk LCTRL": Sticky Ctrl
+    "&sk LALT": Sticky Alt
+    "&sk LGUI": Sticky Cmd
+    "&sk LSHFT": Sticky Shift
+    # Mouse layer top row: macOS Mission Control navigation
+    "&kp LC(UP)": Mission Control
+    "&kp LC(DOWN)": App Expose
+    "&kp LC(LEFT)": Prev Space
+    "&kp LC(RIGHT)": Next Space
+    # Thumb layer activations
+    "&mo LAYER_Symbol": Symbol
+    "&mo LAYER_Nav": Nav

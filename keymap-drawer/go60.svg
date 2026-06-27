@@ -124,7 +124,7 @@ path.combo {
 }
 /* End Tabler Icons Cleanup */
 
-rect.layeract {
+rect.held, rect.combo.held {
     fill: #ffd166;
 }
 </style>
@@ -283,10 +283,10 @@ rect.layeract {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">&#x27;</text>
 </g>
-<g transform="translate(28, 246)" class="key layeract keypos-36">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key layeract"/>
+<g transform="translate(28, 246)" class="key keypos-36">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <a href="#Magic">
-<text x="0" y="0" class="key layeract tap layer-activator">Magic</text>
+<text x="0" y="0" class="key tap layer-activator">Magic</text>
 </a></g>
 <g transform="translate(84, 246)" class="key keypos-37">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -328,10 +328,10 @@ rect.layeract {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">/</text>
 </g>
-<g transform="translate(924, 246)" class="key layeract keypos-47">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key layeract"/>
+<g transform="translate(924, 246)" class="key keypos-47">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <a href="#Keypad">
-<text x="0" y="0" class="key layeract tap layer-activator">Keypad</text>
+<text x="0" y="0" class="key tap layer-activator">Keypad</text>
 </a></g>
 <g transform="translate(140, 266)" class="key keypos-48">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -341,10 +341,10 @@ rect.layeract {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">DEL</text>
 </g>
-<g transform="translate(252, 260)" class="key layeract keypos-50">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key layeract"/>
+<g transform="translate(252, 260)" class="key keypos-50">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <a href="#Symbol">
-<text x="0" y="0" class="key layeract tap layer-activator">Symbol</text>
+<text x="0" y="0" class="key tap layer-activator">Symbol</text>
 </a></g>
 <g transform="translate(700, 260)" class="key keypos-51">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -362,10 +362,10 @@ rect.layeract {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">BSPC</text>
 </g>
-<g transform="translate(371, 298) rotate(30.0)" class="key layeract keypos-55">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key layeract"/>
+<g transform="translate(371, 298) rotate(30.0)" class="key keypos-55">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <a href="#Symbol">
-<text x="0" y="0" class="key layeract tap layer-activator">Symbol</text>
+<text x="0" y="0" class="key tap layer-activator">Symbol</text>
 </a></g>
 <g transform="translate(420, 336) rotate(45.0)" class="key keypos-56">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -375,10 +375,10 @@ rect.layeract {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">LALT</text>
 </g>
-<g transform="translate(581, 298) rotate(-30.0)" class="key layeract keypos-58">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key layeract"/>
+<g transform="translate(581, 298) rotate(-30.0)" class="key keypos-58">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <a href="#Nav">
-<text x="0" y="0" class="key layeract tap layer-activator">Nav</text>
+<text x="0" y="0" class="key tap layer-activator">Nav</text>
 </a></g>
 <g transform="translate(638, 274) rotate(-15.0)" class="key keypos-59">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -641,13 +641,13 @@ rect.layeract {
 <g transform="translate(812, 266)" class="key keypos-53">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 </g>
-<g transform="translate(314, 274) rotate(15.0)" class="key layeract keypos-54">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key layeract"/>
-<a href="#Base">
-<text x="0" y="0" class="key layeract tap layer-activator">Base</text>
-</a></g>
-<g transform="translate(371, 298) rotate(30.0)" class="key keypos-55">
+<g transform="translate(314, 274) rotate(15.0)" class="key keypos-54">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<a href="#Base">
+<text x="0" y="0" class="key tap layer-activator">Base</text>
+</a></g>
+<g transform="translate(371, 298) rotate(30.0)" class="key held keypos-55">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held"/>
 </g>
 <g transform="translate(420, 336) rotate(45.0)" class="key keypos-56">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -889,9 +889,8 @@ rect.layeract {
 <g transform="translate(532, 336) rotate(-45.0)" class="key keypos-57">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 </g>
-<g transform="translate(581, 298) rotate(-30.0)" class="key trans keypos-58">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
+<g transform="translate(581, 298) rotate(-30.0)" class="key held keypos-58">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held"/>
 </g>
 <g transform="translate(638, 274) rotate(-15.0)" class="key keypos-59">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -949,9 +948,9 @@ rect.layeract {
 <g transform="translate(924, 78)" class="key keypos-11">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 </g>
-<g transform="translate(28, 134)" class="key layeract keypos-12">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key layeract"/>
-<text x="0" y="0" class="key layeract tap">
+<g transform="translate(28, 134)" class="key keypos-12">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
 <tspan x="0" dy="-0.6em">Mouse</tspan><tspan x="0" dy="1.2em">Toggle</tspan>
 </text>
 </g>
@@ -961,13 +960,13 @@ rect.layeract {
 <g transform="translate(140, 98)" class="key keypos-14">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 </g>
-<g transform="translate(196, 84)" class="key layeract keypos-15">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key layeract"/>
-<text x="0" y="0" class="key layeract tap">Slower</text>
+<g transform="translate(196, 84)" class="key keypos-15">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Slower</text>
 </g>
-<g transform="translate(252, 92)" class="key layeract keypos-16">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key layeract"/>
-<text x="0" y="0" class="key layeract tap">Faster</text>
+<g transform="translate(252, 92)" class="key keypos-16">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Faster</text>
 </g>
 <g transform="translate(308, 98)" class="key keypos-17">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -975,13 +974,13 @@ rect.layeract {
 <g transform="translate(644, 98)" class="key keypos-18">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 </g>
-<g transform="translate(700, 92)" class="key layeract keypos-19">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key layeract"/>
-<text x="0" y="0" class="key layeract tap">Slower</text>
+<g transform="translate(700, 92)" class="key keypos-19">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Slower</text>
 </g>
-<g transform="translate(756, 84)" class="key layeract keypos-20">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key layeract"/>
-<text x="0" y="0" class="key layeract tap">Faster</text>
+<g transform="translate(756, 84)" class="key keypos-20">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Faster</text>
 </g>
 <g transform="translate(812, 98)" class="key keypos-21">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1558,10 +1557,10 @@ rect.layeract {
 <tspan x="0" dy="-0.6em">KP</tspan><tspan x="0" dy="1.2em">NUM</tspan>
 </text>
 </g>
-<g transform="translate(28, 246)" class="key layeract keypos-36">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key layeract"/>
+<g transform="translate(28, 246)" class="key keypos-36">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <a href="#Magic">
-<text x="0" y="0" class="key layeract tap layer-activator">Magic</text>
+<text x="0" y="0" class="key tap layer-activator">Magic</text>
 </a></g>
 <g transform="translate(84, 246)" class="key keypos-37">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1613,10 +1612,10 @@ rect.layeract {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">=</text>
 </g>
-<g transform="translate(924, 246)" class="key layeract keypos-47">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key layeract"/>
+<g transform="translate(924, 246)" class="key keypos-47">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <a href="#Base">
-<text x="0" y="0" class="key layeract tap layer-activator">Base</text>
+<text x="0" y="0" class="key tap layer-activator">Base</text>
 </a></g>
 <g transform="translate(140, 266)" class="key keypos-48">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1645,10 +1644,10 @@ rect.layeract {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">BSPC</text>
 </g>
-<g transform="translate(314, 274) rotate(15.0)" class="key layeract keypos-54">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key layeract"/>
+<g transform="translate(314, 274) rotate(15.0)" class="key keypos-54">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <a href="#Symbol">
-<text x="0" y="0" class="key layeract tap layer-activator">Symbol</text>
+<text x="0" y="0" class="key tap layer-activator">Symbol</text>
 </a></g>
 <g transform="translate(371, 298) rotate(30.0)" class="key trans keypos-55">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>

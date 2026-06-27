@@ -1,8 +1,42 @@
+draw_config:
+  # Highlight every key that switches/activates a layer in amber so the
+  # layer "entry points" are easy to spot on the rendered keymap.
+  svg_extra_style: |
+    rect.layeract {
+        fill: #ffd166;
+    }
+
 parse_config:
   raw_binding_map:
-    "&magic LAYER_Magic 0": Magic
-    "&keypad_td": Keypad
-    "&symbol_td": Symbol
+    # --- Layer activation keys (colored via type: layeract) ---
+    "&magic LAYER_Magic 0":
+      t: Magic
+      type: layeract
+    "&keypad_td":
+      t: Keypad
+      type: layeract
+    "&symbol_td":
+      t: Symbol
+      type: layeract
+    "&mo LAYER_Symbol":
+      t: Symbol
+      type: layeract
+    "&mo LAYER_Nav":
+      t: Nav
+      type: layeract
+    "&tog LAYER_Mouse":
+      t: Mouse Toggle
+      type: layeract
+    "&mo LAYER_MouseSlow":
+      t: Slower
+      type: layeract
+    "&mo LAYER_MouseFast":
+      t: Faster
+      type: layeract
+    "&to LAYER_Base":
+      t: Base
+      type: layeract
+    # --- Magic / firmware ---
     "&bt_0": BT 0
     "&bt_1": BT 1
     "&bt_2": BT 2
@@ -15,14 +49,11 @@ parse_config:
     "&kp LG(X)": Cut
     "&kp LG(C)": Copy
     "&kp LG(V)": Paste
-    # Mouse layer: clicks, side buttons, speed, sticky mods, layer toggle
+    # Mouse layer: clicks, side buttons, sticky mods
     "&mkp LCLK": Left Click
     "&mkp RCLK": Right Click
     "&mkp MB4": Back Button
     "&mkp MB5": Forward Button
-    "&tog LAYER_Mouse": Mouse Toggle
-    "&mo LAYER_MouseSlow": Slower
-    "&mo LAYER_MouseFast": Faster
     "&sk LCTRL": Sticky Ctrl
     "&sk LALT": Sticky Alt
     "&sk LGUI": Sticky Cmd
@@ -32,9 +63,6 @@ parse_config:
     "&kp LC(DOWN)": App Expose
     "&kp LC(LEFT)": Prev Space
     "&kp LC(RIGHT)": Next Space
-    # Thumb layer activations
-    "&mo LAYER_Symbol": Symbol
-    "&mo LAYER_Nav": Nav
     # Navigation layer (macOS)
     "&kp LC(LS(TAB))": Prev Tab
     "&kp LC(TAB)": Next Tab

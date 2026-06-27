@@ -19,17 +19,17 @@ layers:
   - ['`', DEL, Symbol, LGUI, '[', ']', BSPC, Symbol, LCTRL, LALT, Nav, SPACE]
   Symbol:
   - ['', F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, '']
-  - [+, '!', '@', '#', $, '%', ^, '&', '*', (, ), _]
-  - ['=', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-']
-  - ['', '', '', '', '', '', '[', ']', '{', '}', '', '']
+  - [CAPS, '!', '@', '#', $, '%', ^, '&', '*', (, ), '']
+  - ['', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '']
+  - ['', '', '-', +, _, '=', '[', ']', '{', '}', '', '']
   - - ''
     - ''
-    - ''
-    - ''
-    - ''
-    - ''
-    - Base
     - {type: held}
+    - ''
+    - ''
+    - ''
+    - {t: ▽, type: trans}
+    - {type: held alternate}
     - ''
     - ''
     - ''
@@ -54,7 +54,18 @@ layers:
   Mouse:
   - [Prev Space, App Expose, Mission Control, Next Space, '', '', '', '', '', '', '', '']
   - [Mouse Toggle, '', '', Slower, Faster, '', '', Slower, Faster, '', '', '']
-  - [ESC, Sticky Ctrl, Sticky Alt, Sticky Cmd, Sticky Shift, Forward Button, '', '', '', '', '', '']
+  - - ESC
+    - {t: LCTRL, h: sticky}
+    - {t: LALT, h: sticky}
+    - {t: LGUI, h: sticky}
+    - {t: LSHFT, h: sticky}
+    - Forward Button
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
   - ['', Undo, Cut, Copy, Paste, Back Button, '', '', '', '', '', '']
   - ['', '', '', '', '', '', Left Click, Right Click, '', '', '', '']
   Magic:

@@ -234,6 +234,22 @@
             bindings = <&kp RET>;
             layers = <LAYER_Base>;
         };
+
+        // F1-F11: press a number-row key together with the key directly below
+        // it (column-aligned). 1+Q=F1 ... 0+P=F10, MINUS+BSLH=F11.
+        combo_f1  { timeout-ms = <50>; key-positions = <1 13>;  bindings = <&kp F1>;  layers = <LAYER_Base>; };
+        combo_f2  { timeout-ms = <50>; key-positions = <2 14>;  bindings = <&kp F2>;  layers = <LAYER_Base>; };
+        combo_f3  { timeout-ms = <50>; key-positions = <3 15>;  bindings = <&kp F3>;  layers = <LAYER_Base>; };
+        combo_f4  { timeout-ms = <50>; key-positions = <4 16>;  bindings = <&kp F4>;  layers = <LAYER_Base>; };
+        combo_f5  { timeout-ms = <50>; key-positions = <5 17>;  bindings = <&kp F5>;  layers = <LAYER_Base>; };
+        combo_f6  { timeout-ms = <50>; key-positions = <6 18>;  bindings = <&kp F6>;  layers = <LAYER_Base>; };
+        combo_f7  { timeout-ms = <50>; key-positions = <7 19>;  bindings = <&kp F7>;  layers = <LAYER_Base>; };
+        combo_f8  { timeout-ms = <50>; key-positions = <8 20>;  bindings = <&kp F8>;  layers = <LAYER_Base>; };
+        combo_f9  { timeout-ms = <50>; key-positions = <9 21>;  bindings = <&kp F9>;  layers = <LAYER_Base>; };
+        combo_f10 { timeout-ms = <50>; key-positions = <10 22>; bindings = <&kp F10>; layers = <LAYER_Base>; };
+        combo_f11 { timeout-ms = <50>; key-positions = <11 23>; bindings = <&kp F11>; layers = <LAYER_Base>; };
+        // F12: the two rightmost number-row keys together (0 + MINUS).
+        combo_f12 { timeout-ms = <50>; key-positions = <10 11>; bindings = <&kp F12>; layers = <LAYER_Base>; };
     };
 
     keymap {

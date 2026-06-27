@@ -278,3 +278,39 @@ combos:
 - p: [32, 33]
   k: RET
   l: [Base]
+- p: [1, 13]
+  k: F1
+  l: [Base]
+- p: [2, 14]
+  k: F2
+  l: [Base]
+- p: [3, 15]
+  k: F3
+  l: [Base]
+- p: [4, 16]
+  k: F4
+  l: [Base]
+- p: [5, 17]
+  k: F5
+  l: [Base]
+- p: [6, 18]
+  k: F6
+  l: [Base]
+- p: [7, 19]
+  k: F7
+  l: [Base]
+- p: [8, 20]
+  k: F8
+  l: [Base]
+- p: [9, 21]
+  k: F9
+  l: [Base]
+- p: [10, 22]
+  k: F10
+  l: [Base]
+- p: [11, 23]
+  k: F11
+  l: [Base]
+- p: [10, 11]
+  k: F12
+  l: [Base]

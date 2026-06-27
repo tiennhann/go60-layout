@@ -70,7 +70,7 @@ layers:
     - {t: LALT, h: sticky}
     - {t: LGUI, h: sticky}
     - {t: LSHFT, h: sticky}
-    - '&mkp MB5'
+    - '&mkp MB6'
     - ''
     - ''
     - ''
